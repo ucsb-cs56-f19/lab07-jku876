@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: hello.HomePageTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.257 s <<< FAILURE! - in hello.HomePageTest
+getHomePage_BootstrapLoaded(hello.HomePageTest)  Time elapsed: 0.656 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<302>
+	at hello.HomePageTest.getHomePage_BootstrapLoaded(HomePageTest.java:43)
+

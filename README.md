@@ -1,3 +1,7 @@
+Author: Johnson Ku
+Github Repo: https://github.com/ucsb-cs56-f19/lab07-jku876
+javadoc: https://ucsb-cs56-f19.github.io/lab07-jku876/
+
 A simple Spring Boot webapp using:
 * Thymeleaf templating
 * Pulling in Bootstrap from CDN.

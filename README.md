@@ -1,4 +1,4 @@
-Author: Johnson Ku
+Author: Johnson Ku (jku876)
 
 Github Repo: https://github.com/ucsb-cs56-f19/lab07-jku876
 

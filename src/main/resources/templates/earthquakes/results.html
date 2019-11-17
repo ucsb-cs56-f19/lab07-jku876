@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en"> 
   <head>
-    <title>Earthquake Search</title>
+    <title>Earthquake Search Results</title>
     <div th:replace="bootstrap/bootstrap_head.html"></div>
   </head>
   <body>
@@ -9,25 +9,12 @@
       <div th:replace="bootstrap/bootstrap_nav_header.html"></div>
 
 	<h1>Earthquake Search Results</h1>
-		 <table>
-		    <tr>
-			<th>Distance (km)</th>
-			<td th:text="${eqSearch.distance}"></td>
-		    </tr>
-		    <tr>
-			<th>Minimum Magnitude</th>
-        	        <td th:text="${eqSearch.minmag}"></td>
-            	</tr>
-        	</table>
-	
-	<h2> Results</h2>
-
-		<table>
+		<table class="table">
 		    <thead>
 			<tr>
 			    <th>Title</th>
 			    <th>Distance</th>
-			    <th>Magnitude</th>
+			    <th>Minimum Magnitude</th>
 			    <th>Count</th>
 			</tr>
 		    </thead>
@@ -45,7 +32,7 @@
         </form>
 
        <h3>Earthquakes</h3>
-        <table>
+        <table class ="table">
             <thead>
                 <tr>
                     <th>id</th>
@@ -54,9 +41,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="f: ${featureCollection.features}"> 
-                    <td th:text="${f.id}"></td>
-                    <td th:text="${f.properties.place}"></td>
+                    <tr th:each="f: ${featureCollection.features}"> 
+                    <td><a th:href="${f.properties.url}" th:text="${f.id}"></a></td>    
+		    <td th:text="${f.properties.place}"></td>
                     <td th:text="${f.properties.mag}"></td>
                 </tr>
             </tbody>

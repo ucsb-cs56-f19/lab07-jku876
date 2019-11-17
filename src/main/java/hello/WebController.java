@@ -6,7 +6,7 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Mode;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import hello.geojson.FeatureCollection;
 import java.util.Map;
@@ -47,29 +47,27 @@ public class WebController {
 
     @GetMapping("/page2")
     public String getPage2(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken) {
-
-        return "page2";
+    
+	    return "page2";
     }
-  
+
     @GetMapping("/earthquakes/search")
     public String getEarthquakesSearch(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
             EqSearch eqSearch) {
-        return "earthquakes/search";
+	    return "earthquakes/search";
     }
 
     @GetMapping("/earthquakes/results")
     public String getEarthquakesResults(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
             EqSearch eqSearch) {
-
-        EarthquakeQueryService e =
-           new EarthquakeQueryService();
-
-        model.addAttribute("eqSearch", eqSearch);
+        
+	EarthquakeQueryService e = new EarthquakeQueryService();
+	
+	model.addAttribute("eqSearch", eqSearch);
         String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());
         model.addAttribute("json", json);
-         FeatureCollection featureCollection = FeatureCollection.fromJSON(json);
+        FeatureCollection featureCollection = FeatureCollection.fromJSON(json);
         model.addAttribute("featureCollection",featureCollection);
-	return "earthquakes/results";
+        return "earthquakes/results";
     } 
-
 }

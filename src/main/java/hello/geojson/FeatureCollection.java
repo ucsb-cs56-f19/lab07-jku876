@@ -1,10 +1,8 @@
 package hello.geojson;
 
+import java.util.List;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.util.List;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import org.slf4j.Logger;
@@ -12,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 public class FeatureCollection {
     private static Logger logger = LoggerFactory.getLogger(FeatureCollection.class);
-
     public String type;
     public Metadata metadata;
     public List<Feature> features;
@@ -21,7 +18,6 @@ public class FeatureCollection {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
             FeatureCollection featureCollection = objectMapper.readValue(json, FeatureCollection.class);
             return featureCollection;
         } catch (JsonProcessingException jpe) {
@@ -31,6 +27,5 @@ public class FeatureCollection {
             logger.error("Exception:" + e);
             return null;
         }
-
     }
 }

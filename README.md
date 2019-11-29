@@ -6,6 +6,8 @@ Website: https://ucsb-cs56-f19.github.io/lab07-jku876/
 
 Heroku URL: https://cs56-f19-lab07-jku876.herokuapp.com/
 
+Travis-CI: https://travis-ci.org/ucsb-cs56-f19/lab07-jku876
+
 A simple Spring Boot webapp using:
 * Thymeleaf templating
 * Pulling in Bootstrap from CDN.
